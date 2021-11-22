@@ -38,7 +38,7 @@ pub struct RawTextReader<T: TextIonDataSource> {
 }
 
 impl<T: TextIonDataSource> RawTextReader<T> {
-    fn new(input: T) -> RawTextReader<T> {
+    pub fn new(input: T) -> RawTextReader<T> {
         let text_source = input.to_text_ion_data_source();
         RawTextReader {
             buffer: TextBuffer::new(text_source),
